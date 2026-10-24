@@ -1,191 +1,382 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sliding Hero Section</title>
-  <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tri-Medicals | Quality Healthcare</title>
+
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
-  <header class="header">
-    <div class="logo">
-      <img src="57fd39310b9ed215d905737ed5369419.jpg" 
-      alt="Logo" height="100" width="100">
-      <small>Tri-Medicals</small>
-    </div>
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-   <nav>
-      <a href="index.html">Home</a>
-      <a href="#About">About Us</a>
-     <a href="#Services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <header class="header">
 
-  <div class="buttn">
-    <button><a href="book.html">Book Appointment</a></button>
-  </div>
-  
-  </header>
-  
-  <section class="hero">
-    <div class="hero-content">
-
-      <div class="slide slide1">
-        <h1>Welcome to Tri-Medicals</h1>
-        <p>Your health is our Priority.</p>
-        <a href="#doctors" class="btn">Explore Now</a>
-
-        <div class="flaunt">
-          <div class="flaunt-content">
-          <h1>500+</h1>
-          <p>Patients Saved</p>
-          </div>
-
-          <div class="flaunt-content">
-          <h1>250+</h1>
-          <p>Experts Doctors</p>
-          </div>
-
-          <div class="flaunt-content">
-          <h1>25+</h1>
-          <p>Departments</p>
-          </div>
+        <div class="logo">
+            <img
+                src="57fd39310b9ed215d905737ed5369419.jpg"
+                alt="Tri-Medicals Logo"
+                width="100"
+                height="100"
+            >
+            <small>Tri-Medicals</small>
         </div>
-      </div>
 
-      <div class="slide slide2">
-        <h1>Quality Healthcare</h1>
-        <p>Providing exceptional medical care for your well-being.</p>
-        <a href="jewel.html" class="btn">Learn More</a>
-      </div>
-      
-      
-      <div class="slide slide3">
-        <h1>Experience Excellence</h1>
-        <p>Providing outstanding healthcare services.</p>
-        <a href="rema.html" class="btn">Get Started</a>
-      </div>
-    </div>
-  </section>
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="#About">About Us</a>
+            <a href="#Services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-<section class="doctors" id="doctors">
-    <div class="doctors-heading">
-        <h2>Our Doctors</h2>
-        <p>Meet our experienced team of medical professionals.</p>
-    </div>
-    <div class="doctors-container">
-        <div class="doctor">
-            <div class="doctor-image">
-                <img src="1a757b9acd0ac59963c30a7845293c76.jpg" alt="Dr. Aviana Lexa">
+        <div class="buttn">
+            <button type="button">
+                <a href="book.html">Book Appointment</a>
+            </button>
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO SLIDER
+    ========================== -->
+
+    <section class="hero" aria-label="Welcome to Tri-Medicals">
+
+        <div class="hero-content">
+
+            <!-- SLIDE ONE -->
+
+            <div class="slide slide1">
+
+                <h1>Welcome to Tri-Medicals</h1>
+
+                <p>Your health is our Priority.</p>
+
+                <a href="#doctors" class="btn">
+                    Explore Now
+                </a>
+
             </div>
-            <h3>Dr. Aviana Lexa</h3>
-            <p>Physician</p>
-        </div>
-        <div class="doctor">
-            <div class="doctor-image">
-                <img src="f1638a3b734fa2c73a05cc1893f5796e.jpg" alt="Dr. Eddie Shock">
+
+
+            <!-- SLIDE TWO -->
+
+            <div class="slide slide2">
+
+                <h1>Quality Healthcare</h1>
+
+                <p>
+                    Providing exceptional medical care
+                    for your well-being.
+                </p>
+
+                <a href="jewel.html" class="btn">
+                    Learn More
+                </a>
+
             </div>
-            <h3>Dr. Eddie Shock</h3>
-            <p>Orthopaedic Specialist</p>
-        </div>
-        <div class="doctor">
-            <div class="doctor-image">
-                <img src="ee (1).jpg" alt="Dr. Roseline Kyle">
+
+
+            <!-- SLIDE THREE -->
+
+            <div class="slide slide3">
+
+                <h1>Experience Excellence</h1>
+
+                <p>
+                    Providing outstanding healthcare services.
+                </p>
+
+                <a href="rema.html" class="btn">
+                    Get Started
+                </a>
+
             </div>
-            <h3>Dr. Whitney Kyle</h3>
-            <p>Dentist</p>
+
         </div>
-        <div class="doctor">
-            <div class="doctor-image">
-                <img src="0347b9b4e133ac44768836cc714ef6ae.jpg" alt="Dr. Lawson Bourne">
+
+    </section>
+
+
+    <!-- =========================
+         FLAUNT / STATISTICS
+    ========================== -->
+
+    <section class="flaunt" aria-label="Tri-Medicals statistics">
+
+        <div class="flaunt-content">
+            <h2>500+</h2>
+            <p>Patients Saved</p>
+        </div>
+
+        <div class="flaunt-content">
+            <h2>250+</h2>
+            <p>Expert Doctors</p>
+        </div>
+
+        <div class="flaunt-content">
+            <h2>25+</h2>
+            <p>Departments</p>
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         DOCTORS SECTION
+    ========================== -->
+
+    <section class="doctors" id="doctors">
+
+        <div class="doctors-heading">
+            <h2>Our Doctors</h2>
+
+            <p>
+                Meet our experienced team of medical professionals.
+            </p>
+        </div>
+
+        <div class="doctors-container">
+
+            <div class="doctor">
+                <div class="doctor-image">
+                    <img
+                        src="1a757b9acd0ac59963c30a7845293c76.jpg"
+                        alt="Dr. Aviana Lexa"
+                        loading="lazy"
+                    >
+                </div>
+                <h3>Dr. Aviana Lexa</h3>
+                <p>Physician</p>
             </div>
-            <h3>Dr. Faith Bourne</h3>
-            <p>Surgeon</p>
-        </div>
-        <div class="doctor">
-            <div class="doctor-image">
-                <img src="ca16efb843da4da2bc62c32de4078e88.jpg" alt="Dr. Hailey Marie">
+
+
+            <div class="doctor">
+                <div class="doctor-image">
+                    <img
+                        src="f1638a3b734fa2c73a05cc1893f5796e.jpg"
+                        alt="Dr. Eddie Shock"
+                        loading="lazy"
+                    >
+                </div>
+                <h3>Dr. Eddie Shock</h3>
+                <p>Orthopaedic Specialist</p>
             </div>
-            <h3>Dr. Hailey Marie</h3>
-            <p>Cardiologist</p>
-        </div>
-        <div class="doctor">
-            <div class="doctor-image">
-                <img src="8018d96ec3105ccbb4c014d3eaa37e16.jpg" alt="Dr. Jayne Adams">
+
+
+            <div class="doctor">
+                <div class="doctor-image">
+                    <img
+                        src="ee (1).jpg"
+                        alt="Dr. Whitney Kyle"
+                        loading="lazy"
+                    >
+                </div>
+                <h3>Dr. Whitney Kyle</h3>
+                <p>Dentist</p>
             </div>
-            <h3>Dr. Jayne Adams</h3>
-            <p>Gynaecologist</p>
-        </div>
-        <div class="doctor">
-            <div class="doctor-image">
-                <img src="ee (2).jpg" alt="Dr. Winifred Williams">
+
+
+            <div class="doctor">
+                <div class="doctor-image">
+                    <img
+                        src="0347b9b4e133ac44768836cc714ef6ae.jpg"
+                        alt="Dr. Faith Bourne"
+                        loading="lazy"
+                    >
+                </div>
+                <h3>Dr. Faith Bourne</h3>
+                <p>Surgeon</p>
             </div>
-            <h3>Dr. Daniel Williams</h3>
-            <p>Paediatrician</p>
-        </div>
-        <div class="doctor">
-            <div class="doctor-image">
-                <img src="b3552e364f4a2244667522ef50757efb.jpg" alt="Dr. Grace Johnson">
+
+
+            <div class="doctor">
+                <div class="doctor-image">
+                    <img
+                        src="ca16efb843da4da2bc62c32de4078e88.jpg"
+                        alt="Dr. Hailey Marie"
+                        loading="lazy"
+                    >
+                </div>
+                <h3>Dr. Hailey Marie</h3>
+                <p>Cardiologist</p>
             </div>
-            <h3>Dr. Grace Johnson</h3>
-            <p>Dermatologist</p>
+
+
+            <div class="doctor">
+                <div class="doctor-image">
+                    <img
+                        src="8018d96ec3105ccbb4c014d3eaa37e16.jpg"
+                        alt="Dr. Jayne Adams"
+                        loading="lazy"
+                    >
+                </div>
+                <h3>Dr. Jayne Adams</h3>
+                <p>Gynaecologist</p>
+            </div>
+
+
+            <div class="doctor">
+                <div class="doctor-image">
+                    <img
+                        src="ee (2).jpg"
+                        alt="Dr. Daniel Williams"
+                        loading="lazy"
+                    >
+                </div>
+                <h3>Dr. Daniel Williams</h3>
+                <p>Paediatrician</p>
+            </div>
+
+
+            <div class="doctor">
+                <div class="doctor-image">
+                    <img
+                        src="b3552e364f4a2244667522ef50757efb.jpg"
+                        alt="Dr. Grace Johnson"
+                        loading="lazy"
+                    >
+                </div>
+                <h3>Dr. Grace Johnson</h3>
+                <p>Dermatologist</p>
+            </div>
+
         </div>
-    </div>
-</section>
 
-  <section class="content">
-  
-    <div class="content-section">
-      <div class="logos">
-    <img src="c5f24e0ccd34e02118a8fd1b642acce1.jpg" height="100" width="150">
-             </div>
-      <h2 id =Services>Our Services</h2>
-      <p>
-      At Tri Medicals, we provide comprehensive healthcare services 
-      designed to promote wellness, prevent diseases, and improve the 
-      quality of life of our patients. Our services include general
-       medical consultations, maternity services, pharmacy services, 
-       preventive healthcare, and inpatient and 
-       outpatient treatment.<br><br> 
-       Our dedicated healthcare team prioritizes patient safety, 
-       confidentiality, and compassionate care, ensuring that every 
-       patient receives appropriate attention and support. 
-       Through health education, routine checkups, and continuous medical
-        care, we strive to meet the healthcare needs of individuals and 
-        families while promoting healthier communities.
-      </p> </div>
+    </section>
 
 
+    <!-- =========================
+         ABOUT US AND SERVICES
+    ========================== -->
 
-    <div class="content-section">
-        <div class="logos">
-    <img src="f0aa457db491c90fc447aba554504ecc.jpg" height="100" width="250">
-             </div>
-    
-      <h2 id =About>Who We Are</h2>
-      <p>
-      Tri Medicals is a healthcare-focused initiative established by three individuals —
-       Richard, Jewel and Rhema — united by a common goal of promoting better healthcare experiences through teamwork, innovation, and compassionate service.
-      <br><br>We aim to create a welcoming environment where patients can access 
-      reliable health information, explore available medical services, and 
-      take meaningful steps toward managing their well-being.
+    <section class="content" aria-label="About Tri-Medicals">
 
-    Our foundation is built on collaboration, responsibility, and the 
-    belief that every person deserves to be treated with dignity and care.</p>
-    
-  </section>
+        <!-- OUR SERVICES -->
 
-  <footer>
+        <div class="content-section" id="Services">
 
-<h3><Marquee id="contact">Follow Tri Medicals @ trimedicals@gmail.com or Call 0704 112 0953 for healthcare updates, wellness information, and news about our initiatives.
-</Marquee></h3>
-<p>© 2026 Tri Medicals. All Rights Reserved.<br>
+            <div class="logos">
+                <img
+                    src="c5f24e0ccd34e02118a8fd1b642acce1.jpg"
+                    alt="Tri-Medicals services"
+                    width="150"
+                    height="100"
+                    loading="lazy"
+                >
+            </div>
 
-Built with care by Richard, Jewel and Rhema</p>
+            <h2>Our Services</h2>
+
+            <p>
+                At Tri Medicals, we provide comprehensive healthcare
+                services designed to promote wellness, prevent diseases,
+                and improve the quality of life of our patients.
+
+                Our services include general medical consultations,
+                maternity services, pharmacy services, preventive
+                healthcare, and inpatient and outpatient treatment.
+            </p>
+
+            <p>
+                Our dedicated healthcare team prioritizes patient safety,
+                confidentiality, and compassionate care, ensuring that
+                every patient receives appropriate attention and support.
+
+                Through health education, routine checkups, and continuous
+                medical care, we strive to meet the healthcare needs of
+                individuals and families while promoting healthier
+                communities.
+            </p>
+
+        </div>
 
 
-  </footer>
+        <!-- ABOUT US -->
+
+        <div class="content-section" id="About">
+
+            <div class="logos">
+                <img
+                    src="f0aa457db491c90fc447aba554504ecc.jpg"
+                    alt="About Tri-Medicals"
+                    width="250"
+                    height="100"
+                    loading="lazy"
+                >
+            </div>
+
+            <h2>Who We Are</h2>
+
+            <p>
+                Tri Medicals is a healthcare-focused initiative
+                established by three individuals — Richard, Jewel and
+                Rhema — united by a common goal of promoting better
+                healthcare experiences through teamwork, innovation,
+                and compassionate service.
+            </p>
+
+            <p>
+                We aim to create a welcoming environment where patients
+                can access reliable health information, explore available
+                medical services, and take meaningful steps toward
+                managing their well-being.
+            </p>
+
+            <p>
+                Our foundation is built on collaboration, responsibility,
+                and the belief that every person deserves to be treated
+                with dignity and care.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER / CONTACT
+    ========================== -->
+
+    <footer id="contact">
+
+        <h3>
+            Follow Tri-Medicals
+        </h3>
+
+        <p>
+            Email:
+            <a href="mailto:trimedicals@gmail.com">
+                trimedicals@gmail.com
+            </a>
+            <br>
+
+            Call:
+            <a href="tel:07041120953">
+                0704 112 0953
+            </a>
+            <br>
+
+            Follow us for healthcare updates, wellness information,
+            and news about our initiatives.
+        </p>
+
+        <p>
+            &copy; 2026 Tri-Medicals. All Rights Reserved.
+            <br>
+            Built with care by Richard, Jewel and Rhema.
+        </p>
+
+    </footer>
+
 </body>
 </html>
