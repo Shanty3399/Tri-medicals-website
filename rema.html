@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Registration Portal</title>
+    <link rel="stylesheet" href="rema.css">
+</head>
+<body>
+
+    <!-- Ambient Background -->
+    <div class="ambient-background" aria-hidden="true">
+        <div class="blue-wave"></div>
+    </div>
+
+    <main class="container">
+
+        <!-- Registration Role -->
+        <input type="radio" name="role" id="patient" checked>
+        <input type="radio" name="role" id="worker">
+
+        <!-- Registration Steps -->
+        <input type="radio" name="step" id="step1" checked>
+        <input type="radio" name="step" id="step2">
+        <input type="radio" name="step" id="step3">
+        <input type="radio" name="step" id="step4">
+
+        <!-- Form Side -->
+        <div class="form-side">
+
+            <!-- STEP ONE -->
+            <section class="form step-one">
+                <h2>Hospital Registration</h2>
+                <p>Choose your registration type.</p>
+
+                <div class="role-choice">
+                    <label for="patient">Patient</label>
+                    <label for="worker">Hospital Worker</label>
+                </div>
+
+                <label for="full-name">Full Name</label>
+                <input
+                    type="text"
+                    id="full-name"
+                    name="full_name"
+                    placeholder="Enter full name"
+                    autocomplete="name"
+                >
+
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter email address"
+                    autocomplete="email"
+                >
+
+                <div class="buttons">
+                    <label class="next" for="step2">Next →</label>
+                </div>
+            </section>
+
+            <!-- STEP TWO -->
+            <section class="form step-two">
+                <h2>Personal Details</h2>
+                <p>Please provide your personal information.</p>
+
+                <div class="patient-only">
+                    <label for="date-of-birth">Date of Birth</label>
+                    <input
+                        type="date"
+                        id="date-of-birth"
+                        name="date_of_birth"
+                    >
+
+                    <label for="gender">Gender (optional)</label>
+                    <select id="gender" name="gender">
+                        <option value="">Select</option>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                        <option value="prefer-not-to-say">Prefer not to say</option>
+                    </select>
+                </div>
+
+                <div class="worker-only">
+                    <label for="staff-id">Staff ID</label>
+                    <input
+                        type="text"
+                        id="staff-id"
+                        name="staff_id"
+                        placeholder="Enter staff ID"
+                    >
+
+                    <label for="job-role">Job Role</label>
+                    <input
+                        type="text"
+                        id="job-role"
+                        name="job_role"
+                        placeholder="Enter job role"
+                    >
+                </div>
+
+                <label for="phone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter phone number"
+                    autocomplete="tel"
+                >
+
+                <div class="buttons">
+                    <label class="back" for="step1">← Back</label>
+                    <label class="next" for="step3">Next →</label>
+                </div>
+            </section>
+
+            <!-- STEP THREE -->
+            <section class="form step-three">
+                <h2>Additional Details</h2>
+                <p>Complete your address and contact information.</p>
+
+                <label for="country">Country</label>
+                <input
+                    type="text"
+                    id="country"
+                    name="country"
+                    placeholder="Enter country"
+                    autocomplete="country-name"
+                >
+
+                <label for="state">State / Region</label>
+                <input
+                    type="text"
+                    id="state"
+                    name="state"
+                    placeholder="Enter state or region"
+                >
+
+                <label for="city">City</label>
+                <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    placeholder="Enter city"
+                    autocomplete="address-level2"
+                >
+
+                <!-- Patient Details -->
+                <div class="patient-only">
+                    <label for="emergency-name">Emergency Contact Name</label>
+                    <input
+                        type="text"
+                        id="emergency-name"
+                        name="emergency_contact_name"
+                        placeholder="Enter emergency contact name"
+                    >
+
+                    <label for="emergency-phone">Emergency Contact Phone</label>
+                    <input
+                        type="tel"
+                        id="emergency-phone"
+                        name="emergency_contact_phone"
+                        placeholder="Enter emergency contact phone"
+                    >
+                </div>
+
+                <!-- Hospital Worker Details -->
+                <div class="worker-only">
+                    <label for="department">Department</label>
+                    <select id="department" name="department">
+                        <option value="">Select department</option>
+                        <option value="nursing">Nursing</option>
+                        <option value="administration">Administration</option>
+                        <option value="laboratory">Laboratory</option>
+                        <option value="pharmacy">Pharmacy</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="buttons">
+                    <label class="back" for="step2">← Back</label>
+                    <label class="next" for="step4">Next →</label>
+                </div>
+            </section>
+
+            <!-- STEP FOUR -->
+            <section class="form step-four">
+                <h2>Review Registration</h2>
+                <p>Please check your details before continuing.</p>
+
+                <div class="patient-only">
+                    <p>You selected Patient registration.</p>
+                    <a class="finish" href="index.html">
+                        Finish → Patient Page
+                    </a>
+                </div>
+
+                <div class="worker-only">
+                    <p>You selected Hospital Worker registration.</p>
+                    <a class="finish" href="worker-page.html">
+                        Finish → Worker Page
+                    </a>
+                </div>
+
+                <div class="buttons">
+                    <label class="back" for="step3">← Back</label>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Image Side -->
+        <div class="image-side">
+
+            <div class="image image-one">
+                <img
+                    src="57fd39310b9ed215d905737ed5369419.jpg"
+                    alt="Hospital logo"
+                    width="150"
+                    height="150"
+                    class="hospital-logo"
+                >
+                <h2>Welcome</h2>
+                <p>Your healthcare journey starts here.</p>
+            </div>
+
+            <div class="image image-two">
+                <img
+                    src="57fd39310b9ed215d905737ed5369419.jpg"
+                    alt="Hospital logo"
+                    width="150"
+                    height="150"
+                    class="hospital-logo"
+                >
+                <h2>Personal Details</h2>
+                <p>Complete your registration information.</p>
+            </div>
+
+            <div class="image image-three">
+                <img
+                    src="57fd39310b9ed215d905737ed5369419.jpg"
+                    alt="Hospital logo"
+                    width="150"
+                    height="150"
+                    class="hospital-logo"
+                >
+                <h2>Additional Details</h2>
+                <p>Help us complete your profile.</p>
+            </div>
+
+            <div class="image image-four">
+                <img
+                    src="57fd39310b9ed215d905737ed5369419.jpg"
+                    alt="Hospital logo"
+                    width="150"
+                    height="150"
+                    class="hospital-logo"
+                >
+                <h2>Almost Done</h2>
+                <p>Continue to your appropriate page.</p>
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

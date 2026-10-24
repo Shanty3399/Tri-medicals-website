@@ -1,0 +1,836 @@
+
+/* =========================
+   1. GENERAL RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Times New Roman", serif;
+}
+
+
+/* =========================
+   2. HEADER
+========================= */
+
+.header {
+    width: 100%;
+    padding: 4px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo small {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: blue;
+    text-shadow: 1px 1px 1px black;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    display: inline-block;
+    color: blue;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 10px 12px;
+    border-radius: 10px;
+    transition: color 0.5s ease,
+                background-color 0.5s ease,
+                transform 0.5s ease;
+}
+
+nav a:hover {
+    color: white;
+    background-color: blue;
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   3. HEADER BUTTON
+========================= */
+
+.buttn button {
+    outline: none;
+    background-color: blue;
+    border: none;
+    width: 9rem;
+    height: 2rem;
+    border-radius: 30px;
+    font-weight: bolder;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.5s ease,
+                transform 0.5s ease;
+}
+
+.buttn button a {
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+.buttn button:hover {
+    background-color: darkorange;
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   4. HERO SECTION
+========================= */
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* HERO SLIDER CONTAINER */
+
+.hero-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    animation: slideImages 15s infinite;
+}
+
+/* INDIVIDUAL SLIDES */
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* DARK OVERLAY */
+
+.slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+/* TEXT ABOVE OVERLAY */
+
+.slide h1,
+.slide p,
+.slide .btn {
+    position: relative;
+    z-index: 1;
+}
+
+.slide h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+    font-weight: bolder;
+    text-shadow: 1px 1px 3px black;
+}
+
+.slide p {
+    font-size: 20px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px black;
+}
+
+
+/* =========================
+   5. HERO BUTTON
+========================= */
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: blue;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    text-shadow: 1px 1px 2px black;
+    transition: background-color 0.5s ease,
+                transform 0.5s ease;
+}
+
+.btn:hover {
+    background: darkorange;
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   6. HERO BACKGROUND IMAGES
+========================= */
+
+.slide1 {
+    background-image: url("06338c5618390aa8daa78da139a092a7.jpg");
+}
+
+.slide2 {
+    background-image: url("8f6bf9ec757c823ac76cba3bd593ddc8.jpg");
+}
+
+.slide3 {
+    background-image: url("fb2cb95fa4006c849cd79988b7103ccd.jpg");
+}
+
+
+/* =========================
+   7. SLIDER ANIMATION
+========================= */
+
+@keyframes slideImages {
+    0%, 30% {
+        transform: translateX(0);
+    }
+
+    33%, 63% {
+        transform: translateX(-100%);
+    }
+
+    66%, 96% {
+        transform: translateX(-200%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================
+   8. FLAUNT CONTENT
+========================= */
+
+.flaunt {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 50px;
+    gap: 40px;
+    text-align: center;
+}
+
+.flaunt-content {
+    background-color: red;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.flaunt-content:hover {
+    color: yellow;
+    cursor: pointer;
+}
+
+
+/* =========================
+   9. DOCTORS SECTION
+========================= */
+
+.doctors {
+    padding: 65px 8%;
+    background: #ffffff;
+}
+
+.doctors-heading {
+    margin-bottom: 35px;
+}
+
+.doctors-heading h2 {
+    font-size: 32px;
+    color: blue;
+    margin-bottom: 8px;
+}
+
+.doctors-heading p {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* DOCTOR GRID */
+
+.doctors-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px 18px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* INDIVIDUAL DOCTOR */
+
+.doctor {
+    min-width: 0;
+    background: transparent;
+}
+
+/* DOCTOR IMAGE FRAME */
+
+.doctor-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f0f3f5;
+}
+
+/* DOCTOR IMAGE */
+
+.doctor-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.35s ease;
+}
+
+.doctor:hover .doctor-image img {
+    transform: scale(1.04);
+}
+
+/* DOCTOR NAME */
+
+.doctor h3 {
+    color: #222;
+    font-size: 15px;
+    margin: 10px 0 3px;
+    font-weight: 600;
+}
+
+/* DOCTOR SPECIALIZATION */
+
+.doctor p {
+    color: #777;
+    font-size: 12px;
+    margin: 0;
+}
+
+
+/* =========================
+   10. ABOUT SECTION
+========================= */
+
+.content {
+    padding: 60px 8%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    min-height: 100vh;
+    background-color: rgb(206, 205, 205);
+    position: relative;
+}
+
+/* ABOUT CARDS */
+
+.content-section {
+    flex: 1;
+    min-width: 0;
+    min-height: 10rem;
+    padding: 20px 10px;
+    box-shadow: 7px 0 7px 4px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background-color: white;
+    transition: transform 0.4s ease,
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+    animation: fadeInUp 0.8s ease both;
+}
+
+/* ABOUT CARD HOVER */
+
+.content-section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0, 70, 140, 0.16);
+    border-color: blue;
+}
+
+/* ABOUT ANIMATION */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ABOUT HEADINGS */
+
+.content-section h2 {
+    color: blue;
+    text-shadow: 1px 1px 2px white;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+/* LOGOS */
+
+.logos {
+    padding-top: 30px;
+}
+
+/* ABOUT PARAGRAPHS */
+
+.content-section p {
+    padding: 20px;
+    margin: 0 10px;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+        "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   11. FOOTER
+========================= */
+
+footer {
+    background-color: blue;
+    min-height: 10vh;
+    padding: 10px;
+}
+
+footer h3 {
+    color: white;
+    font-weight: bold;
+}
+
+footer p {
+    color: yellow;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode",
+        "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    font-size: 15px;
+    align-content: center;
+}
+
+
+/* =========================
+   12. TABLET RESPONSIVENESS
+   Screens up to 900px
+========================= */
+
+@media (max-width: 900px) {
+
+    /* HEADER */
+
+    .header {
+        padding: 12px 5%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .logo small {
+        font-size: 25px;
+    }
+
+    nav {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 15px;
+        padding: 8px;
+    }
+
+    .buttn button {
+        width: 8rem;
+    }
+
+    /* HERO */
+
+    .hero {
+        height: 70vh;
+        min-height: 400px;
+    }
+
+    .slide h1 {
+        font-size: 36px;
+        padding: 0 20px;
+    }
+
+    .slide p {
+        font-size: 18px;
+        padding: 0 20px;
+    }
+
+    /* FLAUNT */
+
+    .flaunt {
+        left: 5%;
+        right: 5%;
+        bottom: 20px;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .flaunt-content {
+        flex: 1 1 180px;
+        height: auto;
+        min-height: 60px;
+        padding: 10px;
+    }
+
+    /* DOCTORS */
+
+    .doctors {
+        padding: 50px 5%;
+    }
+
+    .doctors-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px 15px;
+    }
+
+    .doctor-image {
+        height: 210px;
+    }
+
+    /* ABOUT */
+
+    .content {
+        flex-wrap: wrap;
+        padding: 40px 5%;
+        gap: 20px;
+        min-height: auto;
+    }
+
+    .content-section {
+        flex: 1 1 280px;
+        padding: 20px 10px;
+    }
+
+    .content-section p {
+        padding: 15px 5px;
+        margin: 0;
+    }
+
+    /* FOOTER */
+
+    footer p {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================
+   13. MOBILE RESPONSIVENESS
+   Screens up to 600px
+========================= */
+
+@media (max-width: 600px) {
+
+    /* HEADER */
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 18px 5%;
+        gap: 15px;
+    }
+
+    .logo small {
+        font-size: 23px;
+    }
+
+    nav {
+        width: 100%;
+        gap: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 13px;
+        padding: 8px 6px;
+    }
+
+    .buttn button {
+        width: 9rem;
+        height: 2.3rem;
+    }
+
+    /* HERO */
+
+    .hero {
+        height: 65vh;
+        min-height: 400px;
+    }
+
+    .slide h1 {
+        font-size: 28px;
+        margin-bottom: 12px;
+        padding: 0 15px;
+    }
+
+    .slide p {
+        font-size: 15px;
+        margin-bottom: 20px;
+        padding: 0 18px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* FLAUNT */
+
+    .flaunt {
+        left: 4%;
+        right: 4%;
+        bottom: 12px;
+        gap: 8px;
+    }
+
+    .flaunt-content {
+        flex: 1 1 100%;
+        min-height: 45px;
+        font-size: 13px;
+    }
+
+    /* DOCTORS */
+
+    .doctors {
+        padding: 35px 5%;
+    }
+
+    .doctors-heading {
+        margin-bottom: 25px;
+    }
+
+    .doctors-heading h2 {
+        font-size: 25px;
+    }
+
+    .doctors-heading p {
+        font-size: 15px;
+    }
+
+    .doctors-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px 12px;
+    }
+
+    .doctor-image {
+        height: 170px;
+    }
+
+    .doctor h3 {
+        font-size: 13px;
+    }
+
+    .doctor p {
+        font-size: 11px;
+    }
+
+    /* ABOUT */
+
+    .content {
+        flex-direction: column;
+        padding: 35px 5%;
+        gap: 20px;
+        min-height: auto;
+    }
+
+    .content-section {
+        flex: none;
+        width: 100%;
+        min-height: auto;
+        padding: 25px 15px;
+    }
+
+    .content-section h2 {
+        font-size: 23px;
+    }
+
+    .content-section p {
+        font-size: 14px;
+        line-height: 1.7;
+        padding: 12px 5px;
+        margin: 0;
+    }
+
+    .logos {
+        padding-top: 20px;
+    }
+
+    /* FOOTER */
+
+    footer {
+        padding: 15px 10px;
+    }
+
+    footer h3 {
+        font-size: 17px;
+        text-align: center;
+    }
+
+    footer p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+}
+
+
+/* =========================
+   14. VERY SMALL PHONES
+   Screens up to 350px
+========================= */
+
+@media (max-width: 350px) {
+
+    /* HEADER */
+
+    .header {
+        padding: 12px 3%;
+    }
+
+    .logo small {
+        font-size: 20px;
+    }
+
+    nav {
+        gap: 2px;
+    }
+
+    nav a {
+        font-size: 11px;
+        padding: 7px 4px;
+    }
+
+    .buttn button {
+        width: 8rem;
+    }
+
+    /* HERO */
+
+    .hero {
+        min-height: 360px;
+    }
+
+    .slide h1 {
+        font-size: 23px;
+    }
+
+    .slide p {
+        font-size: 13px;
+    }
+
+    .btn {
+        padding: 9px 16px;
+        font-size: 12px;
+    }
+
+    /* FLAUNT */
+
+    .flaunt {
+        left: 3%;
+        right: 3%;
+        gap: 6px;
+    }
+
+    .flaunt-content {
+        font-size: 12px;
+    }
+
+    /* DOCTORS */
+
+    .doctors-container {
+        gap: 15px 8px;
+    }
+
+    .doctor-image {
+        height: 140px;
+    }
+
+    .doctor h3 {
+        font-size: 12px;
+    }
+
+    .doctor p {
+        font-size: 10px;
+    }
+
+    /* ABOUT */
+
+    .content-section {
+        padding: 20px 10px;
+    }
+
+    .content-section h2 {
+        font-size: 21px;
+    }
+
+    .content-section p {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================
+   15. REDUCED MOTION
+   ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

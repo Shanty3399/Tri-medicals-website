@@ -1,0 +1,417 @@
+
+/*   GENERAL RESET
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: darkblue;
+    font-family: Arial, sans-serif;
+}
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
+.ambient-background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.blue-wave {
+    position: absolute;
+    width: 65vw;
+    height: 130vh;
+    top: -15vh;
+    right: -18vw;
+
+    background: linear-gradient(
+        135deg,
+        #1b08c1,
+        #8a81ca 45%,
+        #263F60
+    );
+
+    border-radius: 48% 0 0 52% / 35% 0 0 65%;
+
+    box-shadow:
+        -2px 0 3px #C6A16B,
+        -5px 0 18px rgba(198, 161, 107, 0.55),
+        -10px 0 35px rgba(198, 161, 107, 0.16);
+
+    animation:
+        waveMove 12s ease-in-out infinite alternate,
+        waveShape 9s ease-in-out infinite alternate;
+}
+
+@keyframes waveMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-35px);
+    }
+}
+
+@keyframes waveShape {
+    from {
+        border-radius: 48% 0 0 52% / 35% 0 0 65%;
+    }
+
+    to {
+        border-radius: 40% 0 0 60% / 45% 0 0 55%;
+    }
+}
+
+/* =========================
+   MAIN REGISTRATION BOX
+========================= */
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 900px;
+    max-width: 100%;
+    height: 570px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 10px 35px #0002;
+    overflow: hidden;
+}
+
+/* Hide radio buttons */
+
+.container > input[type="radio"] {
+    display: none;
+}
+
+/* =========================
+   FORM AND IMAGE PANELS
+========================= */
+
+.form-side,
+.image-side {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    min-width: 0;
+    transition: transform 0.7s ease;
+}
+
+.form-side {
+    left: 0;
+    padding: 30px;
+    background: white;
+    z-index: 2;
+
+    /* Allow longer steps to scroll */
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+}
+
+.image-side {
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    text-align: center;
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #0e0bb3,
+        #1f08a3 50%,
+        #263F60
+    );
+
+    border-radius: 100px 0 0 100px;
+    z-index: 3;
+}
+
+/* =========================
+   FORM STEPS
+========================= */
+
+.form,
+.image {
+    display: none;
+}
+
+.form {
+    width: 100%;
+}
+
+.form h2 {
+    color: #0d0a96;
+    font-size: 25px;
+    margin: 5px 0 12px;
+}
+
+.form p {
+    color: #888;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+/* Uniform field labels */
+
+.form > label,
+.patient-only > label,
+.worker-only > label {
+    display: block;
+    margin: 14px 0 7px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* =========================
+   INPUTS AND SELECT MENUS
+========================= */
+
+.form input:not([type="radio"]),
+.form select {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    background: white;
+    outline: none;
+    font-family: inherit;
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.form input:focus,
+.form select:focus {
+    border-color: #55acee;
+    box-shadow: 0 0 0 2px rgba(85, 172, 238, 0.12);
+}
+
+/* =========================
+   PATIENT / WORKER CHOICE
+========================= */
+
+.role-choice {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.role-choice label {
+    flex: 1;
+    padding: 12px 5px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+#patient:checked ~ .form-side
+.role-choice label[for="patient"],
+#worker:checked ~ .form-side
+.role-choice label[for="worker"] {
+    color: white;
+    background: #100aa7;
+    border-color: #536F91;
+}
+
+/* =========================
+   PATIENT / WORKER FIELDS
+========================= */
+
+.patient-only,
+.worker-only {
+    display: none;
+}
+
+#patient:checked ~ .form-side .patient-only {
+    display: block;
+}
+
+#worker:checked ~ .form-side .worker-only {
+    display: block;
+}
+
+/* =========================
+   DISPLAY SELECTED STEP
+========================= */
+
+#step1:checked ~ .form-side .step-one,
+#step2:checked ~ .form-side .step-two,
+#step3:checked ~ .form-side .step-three,
+#step4:checked ~ .form-side .step-four {
+    display: block;
+}
+
+#step1:checked ~ .image-side .image-one,
+#step2:checked ~ .image-side .image-two,
+#step3:checked ~ .image-side .image-three,
+#step4:checked ~ .image-side .image-four {
+    display: block;
+}
+
+/* =========================
+   ORIGINAL PANEL SHIFTING
+========================= */
+
+#step2:checked ~ .form-side,
+#step4:checked ~ .form-side {
+    transform: translateX(100%);
+}
+
+#step2:checked ~ .image-side,
+#step4:checked ~ .image-side {
+    transform: translateX(-100%);
+    border-radius: 0 100px 100px 0;
+}
+
+/* =========================
+   IMAGE PANEL CONTENT
+========================= */
+
+.image img {
+    display: block;
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    margin: 0 auto 20px;
+}
+
+.image h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.image p {
+    color: #eee;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* =========================
+   NEXT AND BACK BUTTONS
+========================= */
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.next,
+.back,
+.finish {
+    display: inline-block;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 25px;
+    background: #170cad;
+    color: white;
+    font-size: 13px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.back {
+    background: #536F91;
+}
+
+.next:hover,
+.back:hover,
+.finish:hover {
+    background: #090582;
+}
+
+/* Prevent button labels from inheriting field spacing */
+
+.buttons label {
+    margin: 0;
+    font-weight: normal;
+}
+
+/* =========================
+   SMALL SCREEN RESPONSIVENESS
+========================= */
+
+@media (max-width: 650px) {
+    body {
+        padding: 12px;
+        align-items: flex-start;
+    }
+
+    .container {
+        width: 100%;
+        height: auto;
+        min-height: 570px;
+    }
+
+    .form-side {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 570px;
+        padding: 25px 20px;
+        overflow-y: visible;
+    }
+
+    .image-side {
+        display: none;
+    }
+
+    /* Disable desktop panel movement on mobile */
+    #step2:checked ~ .form-side,
+    #step4:checked ~ .form-side {
+        transform: none;
+    }
+
+    .blue-wave {
+        width: 100vw;
+        right: -40vw;
+    }
+
+    .form h2 {
+        font-size: 22px;
+    }
+
+    .role-choice {
+        gap: 8px;
+    }
+
+    .role-choice label {
+        font-size: 12px;
+    }
+}
