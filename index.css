@@ -1,7 +1,7 @@
 
-/* =========================
+/* =========================================
    1. GENERAL RESET
-========================= */
+========================================= */
 
 * {
     margin: 0;
@@ -11,20 +11,27 @@
 }
 
 body {
+    width: 100%;
     font-family: "Times New Roman", serif;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
 }
 
 
-/* =========================
+/* =========================================
    2. HEADER
-========================= */
+========================================= */
 
 .header {
     width: 100%;
-    padding: 4px 8%;
+    padding: 8px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
     background: white;
     position: relative;
     z-index: 10;
@@ -33,11 +40,19 @@ body {
 .logo {
     display: flex;
     align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
 }
 
 .logo small {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     color: blue;
     text-shadow: 1px 1px 1px black;
@@ -46,71 +61,98 @@ body {
 nav {
     display: flex;
     align-items: center;
-    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 nav a {
     display: inline-block;
     color: blue;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
-    padding: 10px 12px;
-    border-radius: 10px;
-    transition: color 0.5s ease,
-                background-color 0.5s ease,
-                transform 0.5s ease;
+    padding: 10px;
+    border-radius: 8px;
+    transition: color 0.3s ease,
+                background-color 0.3s ease,
+                transform 0.3s ease;
 }
 
 nav a:hover {
     color: white;
     background-color: blue;
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 
-/* =========================
-   3. HEADER BUTTON
-========================= */
+/* =========================================
+   3. APPOINTMENT BUTTON
+========================================= */
+
+/* APPOINTMENT BUTTON */
+
+.buttn {
+    flex-shrink: 0;
+}
 
 .buttn button {
-    outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0;
     background-color: blue;
     border: none;
-    width: 9rem;
-    height: 2rem;
     border-radius: 30px;
-    font-weight: bolder;
-    font-size: 14px;
     cursor: pointer;
-    transition: background-color 0.5s ease,
-                transform 0.5s ease;
+    overflow: hidden;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
 }
 
 .buttn button a {
-    display: block;
-    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
     color: white;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .buttn button:hover {
     background-color: darkorange;
-    transform: scale(1.1);
+    transform: scale(1.04);
 }
 
+/* MOBILE RESPONSIVENESS */
 
-/* =========================
+@media (max-width: 600px) {
+    .buttn button {
+        min-height: 38px;
+    }
+
+    .buttn button a {
+        padding: 9px 14px;
+        font-size: 12px;
+    }
+}
+
+/* =========================================
    4. HERO SECTION
-========================= */
+========================================= */
 
 .hero {
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    height: 85vh;
+    min-height: 480px;
+    max-height: 760px;
     position: relative;
+    overflow: hidden;
 }
-
-/* HERO SLIDER CONTAINER */
 
 .hero-content {
     display: flex;
@@ -119,34 +161,31 @@ nav a:hover {
     animation: slideImages 15s infinite;
 }
 
-/* INDIVIDUAL SLIDES */
-
 .slide {
-    min-width: 100%;
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
     height: 100%;
-    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 30px;
     text-align: center;
     color: white;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position: relative;
+    overflow: hidden;
 }
-
-/* DARK OVERLAY */
 
 .slide::before {
     content: "";
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.45);
+    z-index: 0;
 }
-
-/* TEXT ABOVE OVERLAY */
 
 .slide h1,
 .slide p,
@@ -156,23 +195,25 @@ nav a:hover {
 }
 
 .slide h1 {
+    width: 100%;
+    max-width: 850px;
     font-size: 45px;
+    line-height: 1.2;
     margin-bottom: 15px;
-    font-weight: bolder;
+    font-weight: bold;
     text-shadow: 1px 1px 3px black;
+    overflow-wrap: break-word;
 }
 
 .slide p {
+    width: 100%;
+    max-width: 700px;
     font-size: 20px;
+    line-height: 1.6;
     margin-bottom: 25px;
     font-weight: bold;
     text-shadow: 1px 1px 3px black;
 }
-
-
-/* =========================
-   5. HERO BUTTON
-========================= */
 
 .btn {
     display: inline-block;
@@ -183,19 +224,19 @@ nav a:hover {
     text-decoration: none;
     border-radius: 5px;
     text-shadow: 1px 1px 2px black;
-    transition: background-color 0.5s ease,
-                transform 0.5s ease;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
 }
 
 .btn:hover {
     background: darkorange;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 
-/* =========================
-   6. HERO BACKGROUND IMAGES
-========================= */
+/* =========================================
+   5. HERO BACKGROUND IMAGES
+========================================= */
 
 .slide1 {
     background-image: url("06338c5618390aa8daa78da139a092a7.jpg");
@@ -210,9 +251,9 @@ nav a:hover {
 }
 
 
-/* =========================
-   7. SLIDER ANIMATION
-========================= */
+/* =========================================
+   6. SLIDER ANIMATION
+========================================= */
 
 @keyframes slideImages {
     0%, 30% {
@@ -233,38 +274,64 @@ nav a:hover {
 }
 
 
-/* =========================
-   8. FLAUNT CONTENT
-========================= */
+/* =========================================
+   7. STATISTICS
+========================================= */
 
 .flaunt {
+    position: relative;
+    width: 100%;
+    padding: 25px 8%;
     display: flex;
-    justify-content: space-between;
-    position: absolute;
-    bottom: 50px;
-    gap: 40px;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
     text-align: center;
+    background: #f5f7fb;
 }
 
 .flaunt-content {
+    flex: 1;
+    min-width: 0;
+    max-width: 300px;
+    min-height: 90px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: red;
-    height: 60px;
+    color: white;
     border-radius: 10px;
+    overflow-wrap: break-word;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.flaunt-content h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.flaunt-content p {
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 .flaunt-content:hover {
     color: yellow;
-    cursor: pointer;
+    background-color: darkred;
+    transform: translateY(-3px);
 }
 
 
-/* =========================
-   9. DOCTORS SECTION
-========================= */
+/* =========================================
+   8. DOCTORS SECTION
+========================================= */
 
 .doctors {
-    padding: 65px 8%;
-    background: #ffffff;
+    padding: 60px 8%;
+    background: white;
 }
 
 .doctors-heading {
@@ -273,17 +340,17 @@ nav a:hover {
 
 .doctors-heading h2 {
     font-size: 32px;
+    line-height: 1.3;
     color: blue;
     margin-bottom: 8px;
 }
 
 .doctors-heading p {
     color: black;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
+    line-height: 1.6;
 }
-
-/* DOCTOR GRID */
 
 .doctors-container {
     display: grid;
@@ -293,14 +360,10 @@ nav a:hover {
     margin: 0 auto;
 }
 
-/* INDIVIDUAL DOCTOR */
-
 .doctor {
     min-width: 0;
     background: transparent;
 }
-
-/* DOCTOR IMAGE FRAME */
 
 .doctor-image {
     width: 100%;
@@ -309,8 +372,6 @@ nav a:hover {
     border-radius: 8px;
     background: #f0f3f5;
 }
-
-/* DOCTOR IMAGE */
 
 .doctor-image img {
     width: 100%;
@@ -325,71 +386,63 @@ nav a:hover {
     transform: scale(1.04);
 }
 
-/* DOCTOR NAME */
-
 .doctor h3 {
     color: #222;
     font-size: 15px;
+    line-height: 1.4;
     margin: 10px 0 3px;
     font-weight: 600;
 }
 
-/* DOCTOR SPECIALIZATION */
-
 .doctor p {
     color: #777;
     font-size: 12px;
-    margin: 0;
+    line-height: 1.5;
 }
 
 
-/* =========================
-   10. ABOUT SECTION
-========================= */
+/* =========================================
+   9. ABOUT US AND SERVICES
+========================================= */
 
 .content {
-    padding: 60px 8%;
-    text-align: center;
+    width: 100%;
+    padding: 45px 8%;
     display: flex;
     justify-content: center;
     align-items: stretch;
-    gap: 30px;
-    min-height: 100vh;
-    background-color: rgb(206, 205, 205);
-    position: relative;
+    gap: 25px;
+    height: auto;
+    min-height: 0;
+    background: #f0f2f5;
 }
-
-/* ABOUT CARDS */
 
 .content-section {
     flex: 1;
     min-width: 0;
-    min-height: 10rem;
-    padding: 20px 10px;
-    box-shadow: 7px 0 7px 4px rgba(0, 0, 0, 0.12);
-    border-radius: 10px;
+    min-height: 0;
+    padding: 25px 20px;
+    background: white;
     border: 1px solid transparent;
-    background-color: white;
-    transition: transform 0.4s ease,
-                box-shadow 0.4s ease,
-                border-color 0.4s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
     animation: fadeInUp 0.8s ease both;
 }
 
-/* ABOUT CARD HOVER */
-
 .content-section:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 18px 35px rgba(0, 70, 140, 0.16);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 70, 140, 0.12);
     border-color: blue;
 }
-
-/* ABOUT ANIMATION */
 
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(25px);
+        transform: translateY(20px);
     }
 
     to {
@@ -398,133 +451,135 @@ nav a:hover {
     }
 }
 
-/* ABOUT HEADINGS */
+.logos {
+    padding-top: 10px;
+    margin-bottom: 15px;
+}
+
+.logos img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto;
+}
 
 .content-section h2 {
     color: blue;
-    text-shadow: 1px 1px 2px white;
+    font-size: 26px;
+    line-height: 1.35;
+    margin-bottom: 12px;
     font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-/* LOGOS */
-
-.logos {
-    padding-top: 30px;
-}
-
-/* ABOUT PARAGRAPHS */
-
 .content-section p {
-    padding: 20px;
-    margin: 0 10px;
+    padding: 8px 0;
+    margin: 0;
     text-align: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
         "Open Sans", "Helvetica Neue", sans-serif;
-    font-weight: bold;
-    line-height: 1.8;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.75;
+    overflow-wrap: break-word;
 }
 
 
-/* =========================
-   11. FOOTER
-========================= */
+/* =========================================
+   10. FOOTER
+========================================= */
 
 footer {
-    background-color: blue;
-    min-height: 10vh;
-    padding: 10px;
+    width: 100%;
+    padding: 20px 15px;
+    background: blue;
+    text-align: center;
 }
 
 footer h3 {
     color: white;
-    font-weight: bold;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 10px;
 }
 
 footer p {
     color: yellow;
     font-weight: bold;
-    text-align: center;
     font-family: "Trebuchet MS", "Lucida Sans Unicode",
         "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-    font-size: 15px;
-    align-content: center;
+    font-size: 14px;
+    line-height: 1.8;
+    overflow-wrap: break-word;
+}
+
+footer a {
+    color: white;
+    overflow-wrap: anywhere;
+}
+
+footer .copyright {
+    margin-top: 12px;
 }
 
 
-/* =========================
-   12. TABLET RESPONSIVENESS
-   Screens up to 900px
-========================= */
+/* =========================================
+   11. TABLETS
+========================================= */
 
-@media (max-width: 900px) {
-
-    /* HEADER */
+@media (min-width: 601px) and (max-width: 900px) {
 
     .header {
-        padding: 12px 5%;
+        padding: 12px 4%;
         flex-wrap: wrap;
-        gap: 15px;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .logo img {
+        width: 55px;
+        height: 55px;
     }
 
     .logo small {
-        font-size: 25px;
+        font-size: 22px;
     }
 
     nav {
-        gap: 10px;
-        flex-wrap: wrap;
-        justify-content: center;
+        gap: 5px;
     }
 
     nav a {
-        font-size: 15px;
+        font-size: 14px;
         padding: 8px;
     }
 
-    .buttn button {
-        width: 8rem;
-    }
-
-    /* HERO */
-
     .hero {
-        height: 70vh;
-        min-height: 400px;
+        height: 75vh;
+        min-height: 450px;
     }
 
     .slide h1 {
         font-size: 36px;
-        padding: 0 20px;
     }
 
     .slide p {
-        font-size: 18px;
-        padding: 0 20px;
+        font-size: 17px;
     }
-
-    /* FLAUNT */
 
     .flaunt {
-        left: 5%;
-        right: 5%;
-        bottom: 20px;
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+        padding: 22px 5%;
+        gap: 12px;
     }
 
-    .flaunt-content {
-        flex: 1 1 180px;
-        height: auto;
-        min-height: 60px;
-        padding: 10px;
+    .flaunt-content h2 {
+        font-size: 24px;
     }
-
-    /* DOCTORS */
 
     .doctors {
-        padding: 50px 5%;
+        padding: 45px 5%;
     }
 
     .doctors-container {
@@ -533,40 +588,36 @@ footer p {
     }
 
     .doctor-image {
-        height: 210px;
+        height: 200px;
     }
 
-    /* ABOUT */
-
     .content {
-        flex-wrap: wrap;
-        padding: 40px 5%;
-        gap: 20px;
-        min-height: auto;
+        padding: 35px 5%;
+        gap: 18px;
     }
 
     .content-section {
-        flex: 1 1 280px;
-        padding: 20px 10px;
+        padding: 20px 14px;
+    }
+
+    .content-section h2 {
+        font-size: 23px;
     }
 
     .content-section p {
-        padding: 15px 5px;
-        margin: 0;
+        font-size: 13px;
+        line-height: 1.7;
     }
 
-    /* FOOTER */
-
-    footer p {
-        font-size: 14px;
+    .logos img {
+        height: 85px;
     }
 }
 
 
-/* =========================
-   13. MOBILE RESPONSIVENESS
-   Screens up to 600px
-========================= */
+/* =========================================
+   12. MOBILE PHONES
+========================================= */
 
 @media (max-width: 600px) {
 
@@ -574,30 +625,35 @@ footer p {
 
     .header {
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-        padding: 18px 5%;
-        gap: 15px;
+        padding: 12px 4%;
+        gap: 12px;
+    }
+
+    .logo img {
+        width: 48px;
+        height: 48px;
     }
 
     .logo small {
-        font-size: 23px;
+        font-size: 21px;
     }
 
     nav {
         width: 100%;
-        gap: 5px;
-        flex-wrap: wrap;
-        justify-content: center;
+        gap: 3px;
     }
 
     nav a {
-        font-size: 13px;
+        font-size: 12px;
         padding: 8px 6px;
     }
 
-    .buttn button {
-        width: 9rem;
-        height: 2.3rem;
+    .appointment-btn {
+        min-height: 38px;
+        padding: 9px 14px;
+        font-size: 12px;
     }
 
     /* HERO */
@@ -605,37 +661,54 @@ footer p {
     .hero {
         height: 65vh;
         min-height: 400px;
+        max-height: 560px;
+    }
+
+    .slide {
+        padding: 20px 16px;
     }
 
     .slide h1 {
-        font-size: 28px;
+        max-width: 420px;
+        font-size: clamp(24px, 6vw, 30px);
+        line-height: 1.25;
         margin-bottom: 12px;
-        padding: 0 15px;
     }
 
     .slide p {
+        max-width: 380px;
         font-size: 15px;
-        margin-bottom: 20px;
-        padding: 0 18px;
+        line-height: 1.55;
+        margin-bottom: 18px;
     }
 
-    .btn {
+    .slide .btn {
         padding: 10px 20px;
         font-size: 14px;
     }
 
-    /* FLAUNT */
+    /* STATISTICS */
 
     .flaunt {
-        left: 4%;
-        right: 4%;
-        bottom: 12px;
-        gap: 8px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        padding: 20px 5%;
     }
 
     .flaunt-content {
-        flex: 1 1 100%;
-        min-height: 45px;
+        flex: none;
+        width: 100%;
+        max-width: none;
+        min-height: 70px;
+        padding: 12px;
+    }
+
+    .flaunt-content h2 {
+        font-size: 24px;
+    }
+
+    .flaunt-content p {
         font-size: 13px;
     }
 
@@ -646,24 +719,25 @@ footer p {
     }
 
     .doctors-heading {
-        margin-bottom: 25px;
+        margin-bottom: 22px;
     }
 
     .doctors-heading h2 {
-        font-size: 25px;
+        font-size: 26px;
     }
 
     .doctors-heading p {
         font-size: 15px;
+        line-height: 1.6;
     }
 
     .doctors-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 22px 12px;
+        gap: 20px 12px;
     }
 
     .doctor-image {
-        height: 170px;
+        height: 165px;
     }
 
     .doctor h3 {
@@ -674,124 +748,145 @@ footer p {
         font-size: 11px;
     }
 
-    /* ABOUT */
+    /* ABOUT AND SERVICES */
 
     .content {
         flex-direction: column;
-        padding: 35px 5%;
-        gap: 20px;
-        min-height: auto;
+        align-items: stretch;
+        gap: 16px;
+        padding: 25px 5%;
+        min-height: 0;
+        height: auto;
     }
 
     .content-section {
         flex: none;
         width: 100%;
-        min-height: auto;
-        padding: 25px 15px;
+        min-width: 0;
+        min-height: 0;
+        height: auto;
+        padding: 18px 15px;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+        animation: none;
     }
 
-    .content-section h2 {
-        font-size: 23px;
-    }
-
-    .content-section p {
-        font-size: 14px;
-        line-height: 1.7;
-        padding: 12px 5px;
-        margin: 0;
+    .content-section:hover {
+        transform: none;
     }
 
     .logos {
-        padding-top: 20px;
+        padding-top: 5px;
+        margin-bottom: 12px;
+    }
+
+    .logos img {
+        height: 70px;
+        max-width: 85%;
+    }
+
+    .content-section h2 {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .content-section p {
+        font-size: 13px;
+        line-height: 1.65;
+        font-weight: 400;
+        padding: 6px 0;
     }
 
     /* FOOTER */
 
     footer {
-        padding: 15px 10px;
+        padding: 18px 12px;
     }
 
     footer h3 {
-        font-size: 17px;
-        text-align: center;
+        font-size: 15px;
     }
 
     footer p {
         font-size: 12px;
-        line-height: 1.6;
+        line-height: 1.8;
     }
 }
 
 
-/* =========================
-   14. VERY SMALL PHONES
-   Screens up to 350px
-========================= */
+/* =========================================
+   13. VERY SMALL PHONES
+========================================= */
 
-@media (max-width: 350px) {
-
-    /* HEADER */
+@media (max-width: 380px) {
 
     .header {
-        padding: 12px 3%;
+        padding: 10px 3%;
+    }
+
+    .logo img {
+        width: 42px;
+        height: 42px;
     }
 
     .logo small {
-        font-size: 20px;
-    }
-
-    nav {
-        gap: 2px;
+        font-size: 18px;
     }
 
     nav a {
         font-size: 11px;
-        padding: 7px 4px;
+        padding: 7px 5px;
     }
-
-    .buttn button {
-        width: 8rem;
-    }
-
-    /* HERO */
 
     .hero {
-        min-height: 360px;
+        height: 60vh;
+        min-height: 370px;
+        max-height: 480px;
+    }
+
+    .slide {
+        padding: 18px 12px;
     }
 
     .slide h1 {
-        font-size: 23px;
+        font-size: 24px;
     }
 
     .slide p {
         font-size: 13px;
     }
 
-    .btn {
+    .slide .btn {
         padding: 9px 16px;
         font-size: 12px;
     }
 
-    /* FLAUNT */
-
     .flaunt {
-        left: 3%;
-        right: 3%;
-        gap: 6px;
+        padding: 15px 4%;
+        gap: 10px;
     }
 
-    .flaunt-content {
-        font-size: 12px;
+    .flaunt-content h2 {
+        font-size: 22px;
     }
 
-    /* DOCTORS */
+    .doctors {
+        padding: 28px 4%;
+    }
+
+    .doctors-heading h2 {
+        font-size: 23px;
+    }
+
+    .doctors-heading p {
+        font-size: 13px;
+    }
 
     .doctors-container {
-        gap: 15px 8px;
+        gap: 17px 8px;
     }
 
     .doctor-image {
-        height: 140px;
+        height: 135px;
     }
 
     .doctor h3 {
@@ -802,26 +897,41 @@ footer p {
         font-size: 10px;
     }
 
-    /* ABOUT */
+    .content {
+        padding: 18px 4%;
+        gap: 12px;
+    }
 
     .content-section {
-        padding: 20px 10px;
+        padding: 16px 12px;
+    }
+
+    .logos img {
+        height: 60px;
     }
 
     .content-section h2 {
-        font-size: 21px;
+        font-size: 20px;
     }
 
     .content-section p {
-        font-size: 13px;
+        font-size: 12px;
+        line-height: 1.65;
+    }
+
+    footer h3 {
+        font-size: 14px;
+    }
+
+    footer p {
+        font-size: 11px;
     }
 }
 
 
-/* =========================
-   15. REDUCED MOTION
-   ACCESSIBILITY
-========================= */
+/* =========================================
+   14. ACCESSIBILITY
+========================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
